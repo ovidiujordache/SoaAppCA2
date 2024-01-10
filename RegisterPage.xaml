@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebApiCA2MobileApp.RegisterPage"
+             Title="Tipsolut"
+      BackgroundColor="AliceBlue"
+       
+             >
+    <VerticalStackLayout >
+
+    
+        <Label 
+            HeightRequest="300"
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <!--  <Image Source="colorful.jpg" Margin="10" Opacity=".7" /> -->
+
+        <Label 
+            FontSize="Large"
+            TextColor="Black"
+            Text="Email"
+            VerticalOptions="Center" 
+            HorizontalOptions="CenterAndExpand" />
+        <Entry
+            
+           TextColor="black"
+            x:Name="UsernameEmail"
+            Placeholder="Email"
+            
+            VerticalOptions="Center" 
+            HorizontalOptions="Fill" WidthRequest="300"/>
+    
+        <Label 
+            Padding="30"
+            FontSize="Large"
+           TextColor="Black"
+          Text="Password"
+           
+          VerticalOptions="Center" 
+          HorizontalOptions="Center" />
+
+
+        <Entry
+            TextColor="Black"
+            Placeholder="Password"  
+            IsPassword="{Binding Source={x:Reference hidePassword}, Path=IsChecked }" x:Name="password" WidthRequest="300"></Entry>
+        <CheckBox x:Name="hidePassword" IsChecked="True"  CheckedChanged="TogglePasswordVisibility"></CheckBox>
+        <Label x:Name="CheckBoxLabel"
+     Text="Show Password"
+     VerticalOptions="End" 
+     HorizontalOptions="CenterAndExpand" />
+        <Button Text="Register" Clicked="Register" Margin="40" Padding="10" WidthRequest="100" />
+
+    </VerticalStackLayout>
+</ContentPage>
